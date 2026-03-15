@@ -13,11 +13,7 @@ D:.
 �   tsconfig.app.json
 �   tsconfig.json
 �   tsconfig.node.json
-�   vite.config.ts
-�   
-+---.qodo
-�   +---agents
-�   +---workflows
+�   vite.config.ts 
 +---src
     �   App.css
     �   App.tsx

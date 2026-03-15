@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { defaultHtml } from "../constansts/htmlConstants";
+import templates from "../constansts/htmlConstants";
 
 const useCode = () => {
-  const [htmlString, setHtmlString] = useState<string>(defaultHtml);
-  const [isSideBarOpen, setSideBarOpen] = useState<boolean>(false);
+  const [htmlString, setHtmlString] = useState<string>(templates[0].html);
   const handleDownload = (htmlString: string) => {
     const fullHtml = `<!DOCTYPE html>
   <html>
@@ -28,8 +27,6 @@ const useCode = () => {
   return {
     htmlString,
     setHtmlString,
-    isSideBarOpen,
-    setSideBarOpen,
     handleDownload,
   };
 };
