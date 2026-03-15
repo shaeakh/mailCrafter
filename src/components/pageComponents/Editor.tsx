@@ -20,7 +20,7 @@ const Editor = ({ htmlString, setHtmlString }: Props) => {
           minimap: { enabled: false },
           wordWrap: "on",
           formatOnType: true,
-          fontSize: 20,
+          fontSize: 15,
           fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
           tabSize: 2,
           insertSpaces: true,

@@ -15,7 +15,9 @@ D:.
 �   tsconfig.node.json
 �   vite.config.ts
 �   
-�       
++---.qodo
+�   +---agents
+�   +---workflows
 +---src
     �   App.css
     �   App.tsx
@@ -36,6 +38,12 @@ D:.
     �           button.tsx
     �           resizable.tsx
     �           
+    +---constansts
+    �       htmlConstants.ts
+    �       
+    +---hooks
+    �       useCode.ts
+    �       
     +---lib
             utils.ts
             
