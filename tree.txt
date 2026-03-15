@@ -1,0 +1,41 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 3ADF-CD5A
+D:.
+�   .gitignore
+�   .npmrc
+�   components.json
+�   eslint.config.js
+�   index.html
+�   package-lock.json
+�   package.json
+�   README.md
+�   tree.txt
+�   tsconfig.app.json
+�   tsconfig.json
+�   tsconfig.node.json
+�   vite.config.ts
+�   
+�       
++---src
+    �   App.css
+    �   App.tsx
+    �   index.css
+    �   main.tsx
+    �   
+    +---assets
+    �       hero.png
+    �       react.svg
+    �       vite.svg
+    �       
+    +---components
+    �   +---pageComponents
+    �   �       Editor.tsx
+    �   �       HtmlViewer.tsx
+    �   �       
+    �   +---ui
+    �           button.tsx
+    �           resizable.tsx
+    �           
+    +---lib
+            utils.ts
+            
