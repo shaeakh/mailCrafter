@@ -7,9 +7,15 @@ const HtmlViewer = ({ htmlString }: props) => {
   <html>
     <head>
       <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://unpkg.com/lucide@latest"></script>
     </head>
     <body>
       ${htmlString}
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          lucide.createIcons();
+        });
+      </script>
     </body>
   </html>
 `;

@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { defaultHtml } from "../constansts/htmlConstants";
+import { useRef, useState } from "react";
+import templates from "../constansts/htmlConstants";
 
 const useCode = () => {
-  const [htmlString, setHtmlString] = useState<string>(defaultHtml);
-  const [isSideBarOpen, setSideBarOpen] = useState<boolean>(false);
+  const [htmlString, setHtmlString] = useState<string>(templates[0].html);
   const handleDownload = (htmlString: string) => {
     const fullHtml = `<!DOCTYPE html>
   <html>
@@ -25,12 +24,18 @@ const useCode = () => {
 
     URL.revokeObjectURL(url);
   };
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const setHtmlStringDebounced = (value: string) => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      setHtmlString(value);
+    }, 300);
+  };
   return {
     htmlString,
     setHtmlString,
-    isSideBarOpen,
-    setSideBarOpen,
     handleDownload,
+    setHtmlStringDebounced,
   };
 };
 export default useCode;
