@@ -12,7 +12,6 @@ import {
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import templates from "./constansts/htmlConstants";
 import useCode from "./hooks/useCode";
-
 function App() {
   const { htmlString, setHtmlString, handleDownload, setHtmlStringDebounced } =
     useCode();

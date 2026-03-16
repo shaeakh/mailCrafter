@@ -9,6 +9,8 @@ import {
   SidebarMenuItem,
 } from "../../components/ui/sidebar";
 
+import logo from "../../assets/logo.png";
+
 interface Template {
   id: string;
   label: string;
@@ -29,6 +31,9 @@ const AppSidebar = ({ templates, selectedTemplateId, onSelect }: Props) => {
           <SidebarGroupLabel>Templates</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
+              <div className="w-full flex justify-center py-2">
+                <img className="w-30 h-auto" src={logo} alt="" />
+              </div>
               {templates.map((template) => (
                 <SidebarMenuItem key={template.id}>
                   <SidebarMenuButton
