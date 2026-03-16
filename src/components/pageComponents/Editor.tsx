@@ -1,12 +1,15 @@
 import MonacoEditor from "@monaco-editor/react";
 import type { Dispatch, SetStateAction } from "react";
+import useTailwindAutocomplete from "../../hooks/useTailwindAutocomplete";
 
 interface Props {
   htmlString: string;
   setHtmlString: Dispatch<SetStateAction<string>>;
+  setHtmlStringDebounced: (value: string) => void;
 }
 
 const Editor = ({ htmlString, setHtmlString }: Props) => {
+  useTailwindAutocomplete();
   return (
     <div className="h-full w-full">
       <MonacoEditor
@@ -18,6 +21,12 @@ const Editor = ({ htmlString, setHtmlString }: Props) => {
         onChange={(value) => setHtmlString(value ?? "")}
         options={{
           minimap: { enabled: false },
+          suggestOnTriggerCharacters: true,
+          quickSuggestions: {
+            strings: true,
+            other: true,
+            comments: false,
+          },
           wordWrap: "on",
           formatOnType: true,
           fontSize: 15,

@@ -14,7 +14,9 @@ import templates from "./constansts/htmlConstants";
 import useCode from "./hooks/useCode";
 
 function App() {
-  const { htmlString, setHtmlString, handleDownload } = useCode();
+  const { htmlString, setHtmlString, handleDownload, setHtmlStringDebounced } =
+    useCode();
+
   return (
     <SidebarProvider>
       <AppSidebar
@@ -42,7 +44,11 @@ function App() {
         <div className="flex-1 min-h-0 ">
           <ResizablePanelGroup orientation="horizontal" className="h-full">
             <ResizablePanel>
-              <Editor htmlString={htmlString} setHtmlString={setHtmlString} />
+              <Editor
+                htmlString={htmlString}
+                setHtmlString={setHtmlString}
+                setHtmlStringDebounced={setHtmlStringDebounced}
+              />
             </ResizablePanel>
             <ResizableHandle />
             <ResizablePanel>
